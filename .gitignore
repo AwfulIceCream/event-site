@@ -1,0 +1,22 @@
+# .gitignore
+
+# Ignore node_modules directory
+node_modules/
+
+# Ignore all log files
+*.log
+
+# Ignore Sass's .map files
+*.map
+
+# Ignore all .css files as they might be compiled from SCSS
+*.css
+
+# Ignore dist directory if you have one
+dist/
+
+# Ignore .DS_Store if you're on a Mac
+.DS_Store
+
+# Ignore JetBrains IDE settings
+.idea/
