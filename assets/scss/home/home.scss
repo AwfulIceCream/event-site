@@ -1,0 +1,16 @@
+// Import common styles
+@import "../../abstracts/variables";
+@import "../common/reset";
+@import "../common/typography";
+@import "../common/buttons";
+
+// Import specific styles for hero section
+@import "hero_section";
+
+// Home page specific styles
+.home-page {
+    padding: $spacing-unit; // Use the spacing unit defined in variables
+    background-color: $background-color; // Use the background color defined in variables
+}
+
+// Additional styles for other sections or components on the home page can be added here

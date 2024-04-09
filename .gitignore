@@ -10,7 +10,6 @@ node_modules/
 *.map
 
 # Ignore all .css files as they might be compiled from SCSS
-*.css
 
 # Ignore dist directory if you have one
 dist/

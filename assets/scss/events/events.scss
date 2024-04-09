@@ -1,0 +1,52 @@
+/* Event card styles */
+.event-card {
+  background-color: #f2f0f1;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-bottom: 20px;
+  overflow: hidden; /* Ensures that the card's content does not overflow */
+
+  .event-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+
+  .event-details {
+    font-size: 1rem;
+    color: #666;
+  }
+
+  .event-details span {
+    font-weight: bold;
+  }
+
+  .event-image {
+    width: 100%; /* Ensures the image takes up the full width of the card */
+    margin-bottom: 10px; /* Adds spacing between the image and other content */
+  }
+
+  .event-link {
+    display: block;
+    text-decoration: none;
+    color: #333;
+    transition: color 0.3s;
+  }
+
+  .event-link:hover {
+    color: #000;
+  }
+
+  @media screen and (max-width: 768px) {
+    .event-image {
+      width: 80%; /* Adjust the width of the image for smaller screens */
+    }
+  }
+
+  @media screen and (max-width: 576px) {
+    .event-image {
+      width: 100%; /* Further adjust the width of the image for even smaller screens */
+    }
+  }
+}
