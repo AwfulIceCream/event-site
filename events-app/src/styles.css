@@ -1,0 +1,122 @@
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.logo a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+}
+
+nav ul li {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+/* Footer styles */
+footer {
+  background-color: #333; /* Primary color */
+  color: #fff; /* Text color */
+  padding: 20px;
+  bottom: 0;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-logo a {
+  color: #fff; /* Text color */
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links ul li {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+.footer-links ul li a {
+  color: #fff; /* Text color */
+  text-decoration: none;
+}
+
+.footer-info {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.title-text {
+  margin-left: 20px;
+}
+
+.event-card {
+  background-color: #f2f0f1;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+.event-card .event-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+.event-card .event-details {
+  font-size: 1rem;
+  color: #666;
+}
+.event-card .event-details span {
+  font-weight: bold;
+}
+.event-card .event-image {
+  width: 100%; /* Ensures the image takes up the full width of the card */
+  margin-bottom: 10px; /* Adds spacing between the image and other content */
+}
+.event-card .event-link {
+  display: block;
+  text-decoration: none;
+  color: #333;
+  transition: color 0.3s;
+}
+.event-card .event-link:hover {
+  color: #000;
+}
+@media screen and (max-width: 768px) {
+  .event-card .event-image {
+    width: 80%;
+  }
+}
+@media screen and (max-width: 576px) {
+  .event-card .event-image {
+    width: 100%;
+  }
+}
+
+/*# sourceMappingURL=styles.css.map */
