@@ -1,11 +1,7 @@
 {
-  "devDependencies": {
-    "eslint": "^9.0.0",
-    "globals": "^15.0.0",
-    "gulp": "^4.0.0",
-    "node-sass": "^9.0.0"
-  },
-  "scripts": {
-    "watch:scss": "node-sass assets/css/styles.scss -o assets/css --watch"
+  "dependencies": {
+    "@emotion/react": "^11.11.4",
+    "@emotion/styled": "^11.11.5",
+    "@mui/material": "^5.15.18"
   }
 }
