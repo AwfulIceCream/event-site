@@ -1,10 +1,10 @@
-import { useParams, useNavigate } from 'react-router-dom';
-import { useEffect, useState, useRef } from 'react';
+import {useParams, useNavigate} from 'react-router-dom';
+import {useEffect, useState, useRef} from 'react';
 import axios from 'axios';
 import "../../styles.css";
 
 export default function EventDetails() {
-    const { eventId } = useParams();
+    const {eventId} = useParams();
     const [event, setEvent] = useState({});
     const [isAttending, setIsAttending] = useState(false);
     const navigate = useNavigate();
@@ -47,7 +47,7 @@ export default function EventDetails() {
         try {
             const token = localStorage.getItem('access_token');
             await axios.delete(`http://localhost:5000/api/v1/events/${eventId}`, {
-                headers: { Authorization: `Bearer ${token}` }
+                headers: {Authorization: `Bearer ${token}`}
             });
             navigate('/events');
         } catch (error) {
@@ -56,7 +56,7 @@ export default function EventDetails() {
     };
 
     const handleEdit = () => {
-        navigate(`/edit-event/${eventId}`);
+        navigate(`/edit-event/${eventId}`, {state: {event}});
     };
 
     const handleToggleAttendance = async () => {
@@ -64,11 +64,11 @@ export default function EventDetails() {
             const token = localStorage.getItem('access_token');
             if (isAttending) {
                 await axios.delete(`http://localhost:5000/api/v1/events/${eventId}/attend/${currentUserId}`, {
-                    headers: { Authorization: `Bearer ${token}` }
+                    headers: {Authorization: `Bearer ${token}`}
                 });
             } else {
                 await axios.post(`http://localhost:5000/api/v1/events/${eventId}/attend/${currentUserId}`, {}, {
-                    headers: { Authorization: `Bearer ${token}` }
+                    headers: {Authorization: `Bearer ${token}`}
                 });
             }
             setIsAttending(!isAttending);
@@ -112,7 +112,8 @@ export default function EventDetails() {
                 <p><strong>Location:</strong> {event.location}</p>
                 <p><strong>Pricing:</strong> Free</p>
                 {currentUserId !== event.creator_id && (
-                    <button className={isAttending ? "stop-attend-button" : "attend-button"} onClick={handleToggleAttendance}>
+                    <button className={isAttending ? "stop-attend-button" : "attend-button"}
+                            onClick={handleToggleAttendance}>
                         {isAttending ? "Do Not Attend" : "Attend"}
                     </button>
                 )}
