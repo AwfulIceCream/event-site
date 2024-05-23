@@ -11,8 +11,9 @@ import CreateEvent from "./components/EventComponents/CreateEvent/CreateEvent"; 
 import {AuthContext} from './AuthContext';
 import EventDetails from "./components/EventComponents/EventDetails/EventDetails";
 import EditEvent from "./components/EventComponents/EditEvent/EditEvent";
-import UserAttending from "./components/EventComponents/UserAttending/UserAttending";
-import UserEvents from "./components/EventComponents/UserEvents/UserEvents";
+import UserAttending from "./components/User/UserAttending/UserAttending";
+import UserEvents from "./components/User/UserEvents/UserEvents";
+import UserEdit from "./components/User/UserEdit/UserEdit";
 
 function App() {
     const [loggedIn, setLoggedIn] = useState(!!localStorage.getItem('access_token'));
@@ -31,6 +32,7 @@ function App() {
                     <Route path="/create-event" element={<CreateEvent/>}/>
                     <Route path="/users/attending" element={<UserAttending/>}/>
                     <Route path="/users/created" element={<UserEvents/>}/>
+                    <Route path="/users/edit" element={<UserEdit />} />
                     <Route path="*" element={<NotFoundPage/>}/>
                 </Routes>
             </Router>

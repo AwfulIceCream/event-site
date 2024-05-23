@@ -1,13 +1,17 @@
-@import "components/Layout/Header/header";
-@import "components/Layout/Footer/footer";
+@import "variables";
 @import "components/EventComponents/EventCard/event_card";
 @import "components/EventComponents/Events/events";
 @import "components/EventComponents/EditEvent/edit_event";
 @import "components/EventComponents/EventDetails/event_details";
 @import "components/EventComponents/CreateEvent/create_event";
-@import "components/EventComponents/UserAttending/user_attending";
-@import "variables";
+
+@import "components/User/UserAttending/user_attending";
+@import "components/User/UserEdit/user_edit";
+
 @import "components/AuthComponents/Login/login";
 @import "components/AuthComponents/Register/register";
+
 @import "components/Layout/HomePage/hero_section";
 @import "components/Layout/HomePage/home";
+@import "components/Layout/Header/header";
+@import "components/Layout/Footer/footer";
