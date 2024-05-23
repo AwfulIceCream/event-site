@@ -15,11 +15,14 @@ export default function EventDetails() {
     useEffect(() => {
         const fetchEvent = async () => {
             try {
-                const response = await axios.get(`http://localhost:5000/api/v1/events/${eventId}`);
+                const token = localStorage.getItem('access_token')
+                const response = await axios.get(`http://localhost:5000/api/v1/events/${eventId}`, {
+                headers: {Authorization: `Bearer ${token}`}});
                 setEvent(response.data);
 
-                const attendeesResponse = await axios.get(`http://localhost:5000/api/v1/events/${eventId}/attendees`);
-                setIsAttending(attendeesResponse.data.some(user => user.id === currentUserId));
+                const isAttendingResponse = await axios.get(`http://localhost:5000/api/v1/events/${eventId}/is_attending/`, {
+                headers: {Authorization: `Bearer ${token}`}});
+                setIsAttending(isAttendingResponse.data.is_attending);
             } catch (error) {
                 console.error('Error:', error);
             }
