@@ -11,6 +11,7 @@ import CreateEvent from "./components/EventComponents/CreateEvent/CreateEvent"; 
 import {AuthContext} from './AuthContext';
 import EventDetails from "./components/EventComponents/EventDetails/EventDetails";
 import EditEvent from "./components/EventComponents/EditEvent/EditEvent";
+import UserAttending from "./components/EventComponents/UserAttending/UserAttending";
 import UserEvents from "./components/EventComponents/UserEvents/UserEvents";
 
 function App() {
@@ -28,7 +29,8 @@ function App() {
                     <Route path="/event/:eventId" element={<EventDetails/>}/>
                     <Route path="/edit-event/:eventId" element={<EditEvent/>}/>
                     <Route path="/create-event" element={<CreateEvent/>}/>
-                    <Route path="/users/events" element={<UserEvents/>}/>
+                    <Route path="/users/attending" element={<UserAttending/>}/>
+                    <Route path="/users/created" element={<UserEvents/>}/>
                     <Route path="*" element={<NotFoundPage/>}/>
                 </Routes>
             </Router>

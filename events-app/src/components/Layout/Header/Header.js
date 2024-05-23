@@ -41,7 +41,8 @@ function Header() {
                 <ul>
                     <li><Link to="/">Home</Link></li>
                     <li><Link to="/events">Events</Link></li>
-                    {loggedIn && <li><Link to={`/users/events`}>Attending</Link></li>}
+                    {loggedIn && <li><Link to={`/users/attending`}>Attending</Link></li>}
+                    {loggedIn && <li><Link to={`/users/created`}>My Events</Link></li>}
                     {!loggedIn && <li><Link to="/login">Login</Link></li>}
                     {!loggedIn && <li><Link to="/register">Register</Link></li>}
                 </ul>
