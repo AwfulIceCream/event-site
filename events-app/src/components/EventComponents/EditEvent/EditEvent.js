@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import axios from 'axios';
 import {useLocation, useNavigate} from 'react-router-dom';
-import "../../styles.css";
+import "../../../styles.css";
 
 function EditEvent() {
     const location = useLocation();

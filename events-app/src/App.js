@@ -1,16 +1,16 @@
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import HomePage from './components/HomePage/HomePage';
-import Register from './components/Register/Register';
-import NotFoundPage from './components/NotFoundPage/NotFoundPage';
-import Events from "./components/Events/Events";
-import Header from "./components/Header/Header";
-import Footer from "./components/Footer/Footer";
-import Login from "./components/Login/Login";
-import CreateEvent from "./components/CreateEvent/CreateEvent"; // import the CreateEvent component
+import HomePage from './components/Layout/HomePage/HomePage';
+import Register from './components/AuthComponents/Register/Register';
+import NotFoundPage from './components/Layout/NotFoundPage/NotFoundPage';
+import Events from "./components/EventComponents/Events/Events";
+import Header from "./components/Layout/Header/Header";
+import Footer from "./components/Layout/Footer/Footer";
+import Login from "./components/AuthComponents/Login/Login";
+import CreateEvent from "./components/EventComponents/CreateEvent/CreateEvent"; // import the CreateEvent component
 import { AuthContext } from './AuthContext';
-import EventDetails from "./components/EventDetails/EventDetails";
-import EditEvent from "./components/EditEvent/EditEvent";
+import EventDetails from "./components/EventComponents/EventDetails/EventDetails";
+import EditEvent from "./components/EventComponents/EditEvent/EditEvent";
 
 function App() {
     const [loggedIn, setLoggedIn] = useState(!!localStorage.getItem('access_token'));

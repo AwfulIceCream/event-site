@@ -1,8 +1,8 @@
 import React, {useState, useEffect, useContext} from 'react';
 import {Link, useNavigate} from 'react-router-dom';
 import axios from 'axios';
-import "../../styles.css"
-import {AuthContext} from "../../AuthContext";
+import "../../../styles.css"
+import {AuthContext} from "../../../AuthContext";
 
 async function logout() {
     try {

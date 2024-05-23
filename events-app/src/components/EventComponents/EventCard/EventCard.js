@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import "../../styles.css"
+import "../../../styles.css"
 
 function EventCard ({event}){
     const formattedDate = new Date(event.date).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
