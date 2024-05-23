@@ -1,14 +1,14 @@
-import React, {useState, useEffect, useContext} from 'react';
-import {Link, useNavigate} from 'react-router-dom';
+import React, { useContext } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import "../../../styles.css"
-import {AuthContext} from "../../../AuthContext";
+import "../../../styles.css";
+import { AuthContext } from "../../../AuthContext";
 
 async function logout() {
     try {
         const token = localStorage.getItem('access_token');
         const response = await axios.post('http://localhost:5000/api/v1/auth/logout', {}, {
-            headers: {Authorization: `Bearer ${token}`}
+            headers: { Authorization: `Bearer ${token}` }
         });
 
         if (response.status === 200) {
@@ -23,13 +23,14 @@ async function logout() {
 }
 
 function Header() {
-    const {loggedIn, setLoggedIn} = useContext(AuthContext);
-    const navigate = useNavigate()
+    const { loggedIn, setLoggedIn, userId } = useContext(AuthContext);
+    const navigate = useNavigate();
+
     const handleLogout = async () => {
         await logout();
         setLoggedIn(false);
-        navigate('/login')
-    }
+        navigate('/login');
+    };
 
     return (
         <header>
@@ -40,6 +41,7 @@ function Header() {
                 <ul>
                     <li><Link to="/">Home</Link></li>
                     <li><Link to="/events">Events</Link></li>
+                    {loggedIn && <li><Link to={`/users/events`}>Attending</Link></li>}
                     {!loggedIn && <li><Link to="/login">Login</Link></li>}
                     {!loggedIn && <li><Link to="/register">Register</Link></li>}
                 </ul>
