@@ -1,4 +1,7 @@
 header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   background-color: #333;
   color: #fff;
   padding: 20px;
@@ -9,33 +12,51 @@ header {
 .logo a {
   color: #fff;
   text-decoration: none;
-  font-size: 1.5rem;
+  font-size: 2rem; /* Make the title text bigger */
   font-weight: bold;
 }
 
 nav ul {
+  display: flex;
   list-style: none;
   padding: 0;
 }
 
 nav ul li {
-  display: inline-block;
+  display: inline;
   margin-right: 20px;
 }
 
 nav ul li a {
   color: #fff;
   text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.logout-button {
+  padding: 8px 20px;
+  background-color: #008CBA;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.logout-button:hover {
+  background-color: #007B9A;
 }
 
 /* Footer styles */
 footer {
   background-color: #333; /* Primary color */
   color: #fff; /* Text color */
-  padding: 20px;
+  padding: 10px;
   bottom: 0;
   width: 100%;
   box-sizing: border-box;
+  position: relative;
 }
 
 .footer-content {
@@ -71,22 +92,20 @@ footer {
   margin-top: 10px;
 }
 
-.title-text {
-  margin-left: 20px;
-}
-
 .event-card {
   background-color: #f2f0f1;
-  border-radius: 8px;
+  border-radius: 10px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   padding: 20px;
   margin-bottom: 20px;
+  margin-right: 16px;
   overflow: hidden;
 }
 .event-card .event-title {
   font-size: 1.5rem;
   font-weight: bold;
   margin-bottom: 10px;
+  margin-top: 10px;
 }
 .event-card .event-details {
   font-size: 1rem;
@@ -117,6 +136,329 @@ footer {
   .event-card .event-image {
     width: 100%;
   }
+}
+
+.title-text {
+  margin-left: 20px;
+}
+
+.title-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.button-container {
+  text-align: right;
+  margin-right: 20px;
+}
+
+/* Additional styles for the edit event page */
+.edit-event {
+  margin: 20px;
+}
+.edit-event h1 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+.edit-event .form-group {
+  margin-bottom: 20px;
+}
+.edit-event .form-group label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+.edit-event .form-group input[type=text],
+.edit-event .form-group input[type=date],
+.edit-event .form-group textarea {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+.edit-event .form-group textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+.event-details {
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  flex: 1;
+}
+.event-details h1 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+.event-details p {
+  margin-bottom: 10px;
+}
+
+.btn, .hero-button {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 0.25rem;
+  font-size: 1rem;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  color: white;
+}
+
+.btn-secondary {
+  background-color: #6c757d;
+  color: white;
+}
+
+.btn:hover, .hero-button:hover {
+  background-color: #0062cc;
+}
+
+.event-actions {
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.menu {
+  display: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: white;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  min-width: 160px;
+}
+
+.menu-item {
+  padding: 12px 16px;
+  cursor: pointer;
+  text-align: left;
+}
+
+.menu-item:hover {
+  background-color: #ddd;
+}
+
+.menu-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 24px;
+  padding: 0;
+}
+
+.attend-button {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 0.25rem;
+  font-size: 1rem;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  background-color: #007bff;
+  color: white;
+}
+.attend-button:hover {
+  background-color: #0056b3;
+}
+
+/* Additional styles for the create event page */
+.create-event {
+  margin: 20px;
+}
+.create-event h1 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+.create-event .form-group {
+  margin-bottom: 20px;
+}
+.create-event .form-group label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+.create-event .form-group input[type=text],
+.create-event .form-group input[type=date],
+.create-event .form-group textarea {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+.create-event .form-group textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+/* Login page styles */
+.login-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.login-form {
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 300px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+.btn-primary {
+  display: inline-block;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  background-color: #007bff;
+  color: #ffffff;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+}
+
+/* Registration page styles */
+.register-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.register-form {
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 300px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+.btn-primary {
+  display: inline-block;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  background-color: #007bff;
+  color: #ffffff;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+}
+
+.hero-section {
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+}
+
+.hero-title {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  background: #6c757d;
+}
+
+.hero-description {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.hero-button {
+  margin-top: 1rem;
+}
+
+.hero-section {
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+}
+
+.hero-title {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  background: #6c757d;
+}
+
+.hero-description {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.hero-button {
+  margin-top: 1rem;
+}
+
+.home-page {
+  padding: 1rem;
+  background-color: #f9f9f9;
 }
 
 /*# sourceMappingURL=styles.css.map */
