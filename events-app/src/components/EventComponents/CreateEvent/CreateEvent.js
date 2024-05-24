@@ -21,7 +21,6 @@ export default function CreateEvent(props) {
     }
 
     const handleChangeDate = (e) => {
-        console.log(new Date(e.target.value).toISOString())
         setEvent({
             ...event,
             [e.target.name]: new Date(e.target.value).toISOString()
@@ -31,7 +30,6 @@ export default function CreateEvent(props) {
     const handleSubmit = (e) => {
         e.preventDefault();
         const token = localStorage.getItem('access_token');
-        console.log(event)
         axios.post('http://localhost:5000/api/v1/events', event, {
             headers: {Authorization: `Bearer ${token}`}
         })
