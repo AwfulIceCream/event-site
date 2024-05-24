@@ -1,3 +1,4 @@
+// Register.js
 import React, { useState, useContext } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
@@ -20,7 +21,7 @@ async function register(name, email, password) {
         return true;
     } catch (error) {
         console.error(error);
-        return false;
+        throw error;
     }
 }
 
@@ -31,6 +32,7 @@ function Register() {
         email: '',
         password: ''
     });
+    const [error, setError] = useState(null);
 
     const navigate = useNavigate();
 
@@ -43,12 +45,14 @@ function Register() {
 
     const handleSubmit = async (event) => {
         event.preventDefault();
-        const result = await register(form.name, form.email, form.password);
-        if (result) {
-            setLoggedIn(true);
-            navigate('/events');
-        } else {
-            console.log('Registration failed: Check your credentials');
+        try {
+            const result = await register(form.name, form.email, form.password);
+            if (result) {
+                setLoggedIn(true);
+                navigate('/events');
+            }
+        } catch (error) {
+            setError('Registration failed: Check your credentials');
         }
     };
 
@@ -56,6 +60,7 @@ function Register() {
         <main className="register-page">
             <div className="register-form">
                 <h2>Register</h2>
+                {error && <p>{error}</p>}
                 <form onSubmit={handleSubmit}>
                     <div className="form-group">
                         <label htmlFor="name">Username</label>
