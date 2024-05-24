@@ -7,13 +7,14 @@ import Events from "./components/EventComponents/Events/Events";
 import Header from "./components/Layout/Header/Header";
 import Footer from "./components/Layout/Footer/Footer";
 import Login from "./components/AuthComponents/Login/Login";
-import CreateEvent from "./components/EventComponents/CreateEvent/CreateEvent"; // import the CreateEvent component
+import CreateEvent from "./components/EventComponents/CreateEvent/CreateEvent";
 import {AuthContext} from './AuthContext';
 import EventDetails from "./components/EventComponents/EventDetails/EventDetails";
 import EditEvent from "./components/EventComponents/EditEvent/EditEvent";
 import UserAttending from "./components/User/UserAttending/UserAttending";
 import UserEvents from "./components/User/UserEvents/UserEvents";
 import UserEdit from "./components/User/UserEdit/UserEdit";
+import Chat from "./components/User/Chat/Chat";
 
 function App() {
     const [loggedIn, setLoggedIn] = useState(!!localStorage.getItem('access_token'));
@@ -34,6 +35,7 @@ function App() {
                     <Route path="/users/created" element={<UserEvents/>}/>
                     <Route path="/users/edit" element={<UserEdit />} />
                     <Route path="*" element={<NotFoundPage/>}/>
+                    <Route path="/chat" element={<Chat/>}/>
                 </Routes>
             </Router>
         </AuthContext.Provider>
